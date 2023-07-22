@@ -1,6 +1,8 @@
 package org.example;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,6 +13,16 @@ public class WebAppClassloader extends ClassLoader {
     public WebAppClassloader(ClassLoader parent, String root) {
         super(parent);
         this.root = root;
+    }
+
+    @Override
+    public URL getResource(String name) {
+        return super.getResource(name);
+    }
+
+    @Override
+    public InputStream getResourceAsStream(String name) {
+        return super.getResourceAsStream(name);
     }
 
     @Override
